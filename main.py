@@ -2,10 +2,8 @@ from random import randint
 from gameComponents import winLose, gameVars
 
 
-# define a win / lose function and invoke it when lives run out
-
 while gameVars.player is False:
-
+    
     gameVars.player = input("Choose your weapon: rock, paper, or scissors: ")
     gameVars.computer = gameVars.choices[randint(0, 2)]
 
