@@ -1,52 +1,31 @@
 from random import randint
+from gameComponents import winLose, gameVars, gameRules
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
 
-# add player and computer lives
-playerLives = 5
-computerLives = 5
 
-# save the player as a varable called player
-# the value of player will be one of three choices to type (inpput)
-player = input("Choose rock, paper, or scissors: ")
+print(Fore.CYAN + Style.BRIGHT + "~~~~~~~ Game On! ~~~~~~~")
 
-print("player chose: " + player)
+while gameVars.player is False:
 
-# an array is a container. it holds multiple values in a 0-based index
-# you can store anything in an array
-# and retrieve it later. Arrays have square bracket notation
+    gameVars.player = input(Style.BRIGHT + "Choose your weapon:" + Fore.WHITE + " rock, paper, or scissors: ")
+    gameVars.computer = gameVars.choices[randint(0, 2)]
 
-choices = ["rock", "paper", "scissors"]
 
-computer = choices[randint(0, 2)]
+    print(Style.DIM + "-----" + Fore.WHITE + Style.NORMAL + " Player attacks with  " + Style.BRIGHT + gameVars.player + "! " + Style.DIM + "-----")
+    print(Style.DIM + "-----" + Fore.WHITE + Style.NORMAL + " Computer attacks with " + Style.BRIGHT + gameVars.computer + "! " + Style.DIM + "-----")
 
-print("computer chose: " + computer)
+    gameRules.winner()
 
-if (computer == player):
-    print("tie! try again")
+    print("Computer lives: " + str(gameVars.computerLives))
+    print ("Your lives: " + str(gameVars.playerLives))
 
-elif (player == "rock"):
-    if (computer == "paper"):
-        print("you lose!")
-        playerLives = playerLives - 1
-    else:
-        print("you win!")
-        computerLives = computerLives - 1
+    if gameVars.playerLives == 0:
+        winLose.winorlose("have been " + Fore.RED + "defeated" + Fore.WHITE)
 
-elif (player == "paper"):
-    if (computer == "scissors"):
-        print("you lose!")
-        playerLives = playerLives - 1
-    else:
-        print("you win!")
-        computerLives = computerLives - 1
+    elif gameVars.computerLives == 0:
+        winLose.winorlose("are " + Fore.GREEN + "victorious" + Fore.WHITE)
 
-elif (player == "scissors"):
-    if (computer == "rock"):
-        print("you lose!")
-        playerLives = playerLives - 1
-    else:
-        print("you win!")
-        computerLives = computerLives - 1
-
-print("computer lives: " + str(computerLives))
-print ("player lives: " + str(playerLives))
+    gameVars.player = False
 
