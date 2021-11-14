@@ -3,15 +3,15 @@
 
 # Rock Paper Scissors in Python
 
-TODO: Write a project description
+Play Rock Paper Scissors against your computer! You each start with 5 lives, the first to knock their opponent down to 0 wins.
 
 ## Installation
 
-TODO: Describe the installation process
+Clone the game off of github and play! Make sure you have Colorama installed for optimal graphics.
 
 ## Usage
 
-TODO: Write usage instructions
+To play, open your terminal, set your location as the game folder, and input "python3 main.py". From there, follow the instructions.
 
 ## Contributing
 
@@ -23,12 +23,18 @@ TODO: Write usage instructions
 
 ## History
 
-TODO: Write history
+November 13, 2021: Game Finalized
 
 ## Credits
 
-TODO: Write credits
+Professor Trevor Van Rys
+
+Tech with Tim
+https://youtu.be/u51Zjlnui4Y 
+
+Colour Cheat Sheet 
+https://github.com/techwithtim/ColoredTextInPython 
 
 ## License
 
-TODO: Write license
+2021 Michaela Blair
